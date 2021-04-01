@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> food order </title>
+  <link rel="stylesheet" type="text/css" href="extraw.css">
+  <script type="text/javascript">
+  function validate() {
+
+        if( document.myForm.field1.value == "" ) {
+           alert( "Please provide your name!" );
+           document.myForm.field1.focus() ;
+           return false;
+        }
+        if( document.myForm.field2.value == 0 ) {
+           alert( "Please provide your number!" );
+           document.myForm.field2.focus() ;
+           return false;
+        }
+        if( document.myForm.field5.value == "") {
+
+           alert( "Please provide your address" );
+           document.myForm.field5.focus() ;
+           return false;
+        }
+        if( document.myForm.field39.value == "" ) {
+           alert( "Please enter your selection" );
+           return false;
+        }
+        if( document.myForm.ff.value == "" ) {
+           alert( "Please enter the quantity" );
+           document.myForm.ff.focus() ;
+           return false;
+         }
+        return( true );
+     }
+   function check()
+   {
+     var jg=document.getElementById('hehe').value;
+
+     if(jg.length<2) //to make sure that the user enters a proper name
+      document.getElementById('bb1').innerHTML="A valid name is required";
+     else {
+       document.getElementById('bb1').innerHTML=" ";
+     }
+   }
+   function check1()
+    {
+       var jbg=document.getElementById('heha').value;
+
+       if(jbg == 0)
+        document.getElementById('bb12').innerHTML="Number is required";
+       else {
+         document.getElementById('bb12').innerHTML=" ";
+       }
+    function check2()
+     {
+        var bbg=document.getElementById('hi').value;
+
+        if(bbg.length == 0)
+         document.getElementById('bb13').innerHTML="Address is required";
+        else {
+         document.getElementById('bb13').innerHTML=" ";
+         }
+     }
+
+
+   }
+ </script>
+</head>
+
+<body>
+  <img src="FooD1.jpeg" alt="Flowers in Chania" width="460" height="345">
+  <div class="nice">
+  <h1 style="color:white;"> FOODILICIOUS </h1>
+  <p style="color:white;"> Welcome to Foodilicious. We act as the bridge between your house and the near by hotels. Select the hotel and type in the food that you want and you are ready to go </p>
+</div>
+  <div class="form-style-5">
+  <form name="myForm" onsubmit = "return(validate());" >
+    <fieldset>
+      <legend><span class="number">1</span> PERSONAL INFO </legend>
+      <input id="hehe" type="text" name="field1" placeholder="your name" onblur="check();"/><span id="bb1"></span><br><br>
+      <input id="heha" type="number" name="field2" placeholder="your phone number" onblur="check1();"/><span id="bb12"></span><br><br>
+      <input type="email" name="field3" placeholder="your email id"><br><br>
+      <input type="date" name="field4" placeholder="date of birth"><br><br>
+      <input type="text" name="field5" placeholder="your address"><br><br>
+    </fieldset>
+    <fieldset>
+      <legend><span class="number">2</span> FOOD ORDER </legend>
+      <input type="radio" id="hotel1" name="a" value="A"><label for="hotel1"> KFC</label><br>
+      <input type="radio" id="hotel2" name="a" value="B"><label for="hotel2"> Mc Donalds</label><br>
+      <input type="radio" id="hotel3" name="a" value="C"><label for="hotel3"> Taco bell</label><br>
+      <label for="lol">Others</label>
+      <select id="lol" name="field47">
+      <optgroup>
+        <option value="buhari">Buhari</option>
+        <option value="wangskitchen">Wangs kitchen</option>
+        <option value="dominos">Dominos</option>
+        <option value="meatandeat">Meat and Eat</option>
+      </optgroup><br>
+      <textarea name="field39" placeholder="Enter the food that you want to order"></textarea><br><br>
+      <input type="number" name="ff" placeholder="quantity"><br>
+    </fieldset>
+    <fieldset>
+      <legend><span class="number">3</span> PAYMENT DETAILS </legend><!-- This fieldset is like choosing between the different types of payments suitable for the users -->
+      <input type="radio" id="hotel4" name="a" value="A"><label for="hotel4"> Gpay </label><br>
+      <input type="number" name="field9" placeholder="enter your gpay num"><br><br>
+      <input type="radio" id="hotel5" name="a" value="B"><label for="hotel5"> Paytm </label><br>
+      <input type="number" name="field9" placeholder="enter your paytm num"><br><br>
+      <input type="radio" id="hotel6" name="a" value="C"><label for="hotel6"> Net Banking </label>
+      <label for="job">Select the bank</label><!--clicking on this must redirect you to the original netbanking page-->
+      <select id="job" name="field4">
+      <optgroup>
+        <option value="axisbank">Axis Bank</option>
+        <option value="canarabank">Canara Bank</option>
+        <option value="icici">ICICI</option>
+        <option value="hdfc">HDFC</option>
+      </optgroup><br>
+      <input type="radio" id="hotel7" name="a" value="D"><label for="hotel7"> Credit/Debit card </label><br>
+      <input type="text" name="field10" placeholder="Your credit card name"><br><br>
+      <input type="text" name="field2" placeholder="Exp month"><br><br>
+      <input type="number" name="field11" placeholder="Credit card number"> <span id="cardprompt">1111-2222-3333-4444</span><br><br>
+      <input type="number" name="field12" placeholder="CVV"><br><br>
+      <input type="number" name="field13" placeholder="Exp year"><br><br>
+    </fieldset>
+    <button class="button" onclick="validateForm()">submit</button>
+  </form>
+</div>
+</body>
+</html>
